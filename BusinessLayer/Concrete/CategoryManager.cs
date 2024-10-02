@@ -23,7 +23,7 @@ namespace BusinessLayer.Concrete
             _categoryDal.Insert(category);
         }
 
-        public void CategoryRemove(Category category)
+        public void CategoryDelete(Category category)
         {
             _categoryDal.Delete(category);
         }
