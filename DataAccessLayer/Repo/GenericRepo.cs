@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,7 +36,12 @@ namespace DataAccessLayer.Repo
             c.SaveChanges();
         }
 
-        public void Update(T t)
+		public List<T> GetListAll(Expression<Func<T, bool>> filter)
+		{
+			return c.Set<T>().Where(filter).ToList();
+		}
+
+		public void Update(T t)
         {
             c.Update(t);
             c.SaveChanges();
