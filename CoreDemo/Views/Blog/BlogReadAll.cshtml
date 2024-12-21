@@ -28,7 +28,8 @@
 			<div class="row">
 				<!--left-->
 				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
-					@foreach(var item in Model){
+					@foreach(var item in Model)
+					{
 					<div class="blog-grid-top">
 						<div class="b-grid-top">
 							<div class="blog_info_left_grid">
@@ -57,7 +58,7 @@
 								</ul>
 							</div>
 						</div>
-							
+					
 
 						<h3>
 							<a href="single.html">@item.BlogTitle </a>
@@ -69,7 +70,7 @@
 					</div>
 					}
 
-					@await Component.InvokeAsync("CommentList")
+					@await Component.InvokeAsync("CommentListByBlog")
 					@*@await Html.PartialAsync("~/Views/Comment/CommentListByBlog.cshtml")*@
 					@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")
 				</div>
